@@ -1,0 +1,11 @@
+<?php
+/** @var \OH\WhatsappBtn\ViewModel\Button $viewModel */
+$viewModel = $block->getViewModel();
+?>
+<?php if ($url = $viewModel->getUrl()): ?>
+    <div class="oh-whatsapp">
+        <a style="background-image: url('<?= $block->getViewFileUrl('OH_WhatsappBtn::images/wp-btn-orig.png') ?>');"
+           target="_blank"
+           class="oh-whatsapp__button" href="<?= $escaper->escapeUrl($url) ?>"></a>
+    </div>
+<?php endif; ?>

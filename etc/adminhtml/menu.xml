@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="OH_WhatsappBtn::title"
+             title="Whatsapp"
+             module="OH_WhatsappBtn"
+             sortOrder="90"
+             parent="OH_Core::oh"
+             translate="title"
+             resource="OH_WhatsappBtn::setting"
+        />
+
+        <add id="OH_WhatsappBtn::settings"
+             title="Settings"
+             module="OH_WhatsappBtn"
+             sortOrder="10"
+             translate="title"
+             parent="OH_WhatsappBtn::title"
+             resource="OH_WhatsappBtn::setting"
+             action="adminhtml/system_config/edit/section/whatsapp"
+        />
+    </menu>
+</config>

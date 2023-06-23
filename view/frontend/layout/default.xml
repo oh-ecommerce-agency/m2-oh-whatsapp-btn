@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block name="oh.whatsapp.btn" template="OH_WhatsappBtn::button.phtml"
+                   ifconfig="whatsapp/settings/enabled">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">OH\WhatsappBtn\ViewModel\Button</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

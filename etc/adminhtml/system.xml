@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+
+    <system>
+        <section id="whatsapp" translate="label" sortOrder="20"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Whatsapp</label>
+            <tab>oh_core</tab>
+            <resource>OH_WhatsappBtn::settings</resource>
+            <group id="settings" translate="label"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <field id="enabled" translate="label comment" type="select"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <comment>Enable float button</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="url" translate="label" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Url</label>
+                    <comment><![CDATA[You can use this url to build your message: https://create.wa.link/]]></comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
