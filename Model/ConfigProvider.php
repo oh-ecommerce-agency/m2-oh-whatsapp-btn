@@ -21,7 +21,7 @@ class ConfigProvider
     /**
      * @var string
      */
-    const XML_CONFIG_PATH_URL = 'whatsapp/settings/url';
+    const XML_CONFIG_PATH_URL = 'whatsapp/settings/%s';
 
     /**
      * @var ScopeInterface
@@ -45,12 +45,13 @@ class ConfigProvider
     }
 
     /**
-     * Get url
+     * Get config value by path
      *
-     * @return string
+     * @return mixed
      */
-    public function getUrl(): ?string
+    public function getConfigValue($path)
     {
-        return $this->scopeInterface->getValue(self::XML_CONFIG_PATH_URL, ScopeInterface::SCOPE_STORE) ?: '';
+        $path = sprintf(self::XML_CONFIG_PATH_URL, $path);
+        return $this->scopeInterface->getValue($path, ScopeInterface::SCOPE_STORE);
     }
 }

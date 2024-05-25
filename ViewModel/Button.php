@@ -32,6 +32,6 @@ class Button extends DataObject implements ArgumentInterface
 
     public function getUrl(): string
     {
-        return $this->configProvider->getUrl();
+        return $this->configProvider->getConfigValue('url');
     }
 }
